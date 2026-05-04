@@ -147,18 +147,6 @@
       overflow: hidden;
     }
 
-    .eyebrow {
-      width: fit-content;
-      margin-bottom: 18px;
-      padding: 8px 12px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      color: var(--ink-2);
-      background: rgba(255, 255, 255, 0.72);
-      font-size: 0.86rem;
-      font-weight: 850;
-    }
-
     h1 {
       max-width: 760px;
       margin-bottom: 22px;
@@ -331,7 +319,7 @@
     .overview-card:hover,
     .overview-card:focus-visible {
       transform: translateY(-3px);
-      border-color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, #ffffff);
       box-shadow: 0 18px 38px rgba(18, 27, 36, 0.1);
       outline: none;
     }
@@ -347,12 +335,6 @@
       margin-bottom: 18px;
       color: var(--muted);
       font-size: 0.98rem;
-    }
-
-    .overview-card span {
-      color: var(--accent);
-      font-size: 0.84rem;
-      font-weight: 900;
     }
 
     .project {
@@ -606,50 +588,6 @@
       font-weight: 800;
     }
 
-    .closing {
-      padding: clamp(40px, 7vw, 76px) clamp(18px, 5vw, 76px);
-      border-top: 1px solid var(--line);
-      background: #edf2ee;
-    }
-
-    .closing-inner {
-      width: min(1180px, 100%);
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.45fr);
-      gap: 26px;
-      align-items: center;
-    }
-
-    .closing h2 {
-      margin-bottom: 10px;
-      font-size: clamp(2rem, 4vw, 4.2rem);
-      line-height: 1;
-    }
-
-    .closing p {
-      max-width: 760px;
-      margin-bottom: 0;
-      color: var(--muted);
-    }
-
-    .cv-box {
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-    }
-
-    .cv-box strong {
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    .cv-box code {
-      color: var(--ink-2);
-      word-break: break-word;
-    }
-
     .lightbox {
       width: min(94vw, 980px);
       max-height: 92vh;
@@ -719,8 +657,7 @@
     @media (max-width: 1050px) {
       .hero,
       .project-inner,
-      .video-layout,
-      .closing-inner {
+      .video-layout {
         grid-template-columns: 1fr;
       }
 
@@ -773,8 +710,7 @@
       .section-head,
       .overview,
       .project-inner,
-      .video-layout,
-      .closing {
+      .video-layout {
         padding-left: 16px;
         padding-right: 16px;
       }
@@ -845,7 +781,6 @@
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div>
-        <p class="eyebrow">Mobil uygulama gelistirme ve urun arayuzu</p>
         <h1 id="hero-title">Mobil Uygulama Portfolyosu</h1>
         <p class="lead">Randevu alma, proje takip, mobil guvenlik tarama ve odeme akislari icin hazirlanmis uygulama ekranlari. Bu portfolyo CV linki olarak tek sayfada proje kapsamlarini, ekran akislari ve demo videosunu gosterir.</p>
         <div class="actions">
@@ -877,7 +812,7 @@
           <img src="./portfolio assets/1 Randevum/randevu adımları/3.jpg" alt="Randevum tarih ve saat secim ekrani">
         </figure>
         <figure class="phone-frame">
-          <img src="./portfolio assets/mahal/user/IMG_0489.PNG" alt="Mahal proje detay ekrani">
+          <img src="./portfolio assets/mahal/user/IMG_0487.PNG" alt="Mahal ana sayfa ekrani">
         </figure>
         <figure class="phone-frame native">
           <img src="./portfolio assets/2 Secure App/IMG_8774.PNG" alt="CYNTE Antivirus guncel durum ekrani">
@@ -896,28 +831,24 @@
           <strong>Randevum</strong>
           <p>Kuafor ve guzellik salonlari icin musteri randevusu, isletme secimi, hizmet secimi ve yonetim akislari.</p>
         </div>
-        <span>11 ekran</span>
       </a>
       <a class="overview-card" style="--accent: var(--gold)" href="#mahal">
         <div>
           <strong>Mahal</strong>
           <p>Insaat projeleri icin kullanici ve yonetici deneyimini ayiran takip, destek ve proje durum ekranlari.</p>
         </div>
-        <span>11 ekran</span>
       </a>
       <a class="overview-card" style="--accent: var(--blue)" href="#secure">
         <div>
           <strong>CYNTE Antivirus</strong>
           <p>Mobil guvenlik uygulamasi icin onboarding, tarama, sonuc ve rapor ekranlari.</p>
         </div>
-        <span>8 ekran</span>
       </a>
       <a class="overview-card" style="--accent: var(--green)" href="#tap4pay">
         <div>
           <strong>Tap4Pay</strong>
           <p>Odeme akisini hareketli olarak gosteren mobil demo videosu.</p>
         </div>
-        <span>1 video</span>
       </a>
     </section>
 
@@ -1137,18 +1068,6 @@
       </div>
     </article>
 
-    <section class="closing">
-      <div class="closing-inner">
-        <div>
-          <h2>CV icin hazir tek link</h2>
-          <p>Bu klasor GitHub'a yuklenip GitHub Pages aktif edildiginde portfolyo dogrudan repo ana adresinden acilir. Repo adi `portfolio` olursa beklenen link formati `https://kullanici-adin.github.io/portfolio/` olur.</p>
-        </div>
-        <div class="cv-box">
-          <strong>Yayin ayari</strong>
-          <code>Settings -> Pages -> Deploy from a branch -> main -> /root</code>
-        </div>
-      </div>
-    </section>
   </main>
 
   <dialog class="lightbox" id="lightbox">
@@ -1183,9 +1102,9 @@
         text: "Isletme ve uygulama gorunumunu ozellestiren yonetim ekranlari.",
         nativeFrame: false,
         items: [
-          { src: "./portfolio assets/1 Randevum/özelleştirme /1.jpg", title: "Isletme ana ekran" },
-          { src: "./portfolio assets/1 Randevum/özelleştirme /2.jpg", title: "Profil ve ayarlar" },
-          { src: "./portfolio assets/1 Randevum/özelleştirme /3.jpg", title: "Gorunum ozellestirme" }
+          { src: "./portfolio assets/1 Randevum/ozellestirme/1.jpg", title: "Isletme ana ekran" },
+          { src: "./portfolio assets/1 Randevum/ozellestirme/2.jpg", title: "Profil ve ayarlar" },
+          { src: "./portfolio assets/1 Randevum/ozellestirme/3.jpg", title: "Gorunum ozellestirme" }
         ]
       },
       "randevum-booking": {
@@ -1226,10 +1145,10 @@
         text: "Yonetici tarafinda proje kontrolu, rapor ve durum takibi ekranlari.",
         nativeFrame: false,
         items: [
-          { src: "./portfolio assets/mahal/yönetici/IMG_0501.PNG", title: "Yonetici paneli" },
-          { src: "./portfolio assets/mahal/yönetici/IMG_0504.PNG", title: "Proje kontrolu" },
-          { src: "./portfolio assets/mahal/yönetici/IMG_0506.PNG", title: "Raporlama" },
-          { src: "./portfolio assets/mahal/yönetici/IMG_0508.PNG", title: "Durum takibi" }
+          { src: "./portfolio assets/mahal/yonetici/IMG_0501.PNG", title: "Yonetici paneli" },
+          { src: "./portfolio assets/mahal/yonetici/IMG_0504.PNG", title: "Proje kontrolu" },
+          { src: "./portfolio assets/mahal/yonetici/IMG_0506.PNG", title: "Raporlama" },
+          { src: "./portfolio assets/mahal/yonetici/IMG_0508.PNG", title: "Durum takibi" }
         ]
       },
       "secure-flow": {
@@ -1272,7 +1191,7 @@
         const img = document.createElement("img");
         img.src = item.src;
         img.alt = `${gallery.project} - ${item.title}`;
-        img.loading = index < 2 ? "eager" : "lazy";
+        img.loading = "eager";
 
         const caption = document.createElement("figcaption");
         caption.textContent = item.title;
