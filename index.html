@@ -4,26 +4,27 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mahmut Dal - Mobil Uygulama Portfolyosu</title>
-  <meta name="description" content="Mahmut Dal tarafindan gelistirilen mobil uygulama projeleri: Randevum, Mahal, CYNTE Antivirus ve Tap4Pay demo vitrini.">
+  <meta name="description" content="Mahmut Dal tarafindan hazirlanan mobil uygulama portfolyosu. Randevum, Mahal, CYNTE Antivirus ve Tap4Pay proje vitrinleri.">
   <meta property="og:title" content="Mahmut Dal - Mobil Uygulama Portfolyosu">
-  <meta property="og:description" content="Flutter, Firebase ve mobil urun gelistirme odakli uygulama portfolyosu.">
+  <meta property="og:description" content="Flutter, Firebase, mobil UI ve uygulama akislarini gosteren detayli portfolyo.">
   <meta property="og:type" content="website">
   <style>
     :root {
       color-scheme: light;
-      --ink: #17212b;
-      --ink-soft: #2e3b47;
-      --muted: #63717d;
-      --line: #dce5e2;
-      --page: #f5f7f4;
+      --ink: #121b24;
+      --ink-2: #2f3e4b;
+      --muted: #62717e;
+      --line: #dce4df;
+      --page: #f6f8f5;
       --surface: #ffffff;
-      --teal: #109d91;
-      --pink: #e6467e;
-      --gold: #b89a3e;
-      --blue: #2f6fd8;
-      --red: #ef4240;
-      --green: #279a67;
-      --shadow: 0 24px 60px rgba(23, 33, 43, 0.12);
+      --soft: #eef3ef;
+      --pink: #df3f78;
+      --teal: #13998e;
+      --gold: #b79a43;
+      --blue: #2f71d2;
+      --green: #27885f;
+      --red: #e54a42;
+      --shadow: 0 22px 56px rgba(18, 27, 36, 0.13);
     }
 
     * {
@@ -36,9 +37,9 @@
 
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background: var(--page);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.55;
       letter-spacing: 0;
     }
@@ -49,59 +50,80 @@
       max-width: 100%;
     }
 
-    figure {
-      margin: 0;
+    button,
+    input,
+    textarea {
+      font: inherit;
     }
 
     a {
       color: inherit;
     }
 
+    figure,
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-top: 0;
+    }
+
+    figure {
+      margin: 0;
+    }
+
+    section,
+    article {
+      scroll-margin-top: 92px;
+    }
+
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 30;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      padding: 16px clamp(18px, 4vw, 56px);
-      background: rgba(245, 247, 244, 0.92);
-      border-bottom: 1px solid rgba(220, 229, 226, 0.8);
+      gap: 16px;
+      padding: 14px clamp(18px, 4vw, 56px);
+      border-bottom: 1px solid rgba(220, 228, 223, 0.9);
+      background: rgba(246, 248, 245, 0.9);
       backdrop-filter: blur(18px);
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      font-weight: 800;
+      gap: 11px;
+      min-width: max-content;
       color: var(--ink);
+      font-weight: 900;
+      text-decoration: none;
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
+      width: 40px;
+      height: 40px;
       display: grid;
       place-items: center;
       border-radius: 8px;
-      color: white;
+      color: #fff;
       background: var(--ink);
-      font-weight: 900;
+      font-size: 0.9rem;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       color: var(--muted);
-      font-size: 0.95rem;
-      font-weight: 700;
+      font-size: 0.94rem;
+      font-weight: 800;
     }
 
     .nav-links a {
-      padding: 9px 12px;
+      padding: 9px 11px;
       border-radius: 8px;
       text-decoration: none;
     }
@@ -109,84 +131,74 @@
     .nav-links a:hover,
     .nav-links a:focus-visible {
       color: var(--ink);
-      background: #e9efec;
+      background: #e8eeea;
       outline: none;
     }
 
     .hero {
-      min-height: calc(100svh - 70px);
+      min-height: calc(100svh - 69px);
       display: grid;
-      grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.18fr);
+      grid-template-columns: minmax(0, 0.88fr) minmax(390px, 1.12fr);
       align-items: center;
-      gap: clamp(24px, 5vw, 72px);
-      padding: clamp(42px, 7vw, 86px) clamp(18px, 5vw, 76px) clamp(44px, 6vw, 72px);
+      gap: clamp(28px, 6vw, 82px);
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: clamp(44px, 7vw, 92px) clamp(18px, 5vw, 76px) clamp(38px, 6vw, 76px);
       overflow: hidden;
     }
 
     .eyebrow {
-      display: inline-flex;
       width: fit-content;
-      margin: 0 0 16px;
+      margin-bottom: 18px;
       padding: 8px 12px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      color: var(--ink-soft);
-      background: rgba(255, 255, 255, 0.68);
+      color: var(--ink-2);
+      background: rgba(255, 255, 255, 0.72);
       font-size: 0.86rem;
-      font-weight: 800;
-    }
-
-    h1,
-    h2,
-    h3,
-    p {
-      margin-top: 0;
-    }
-
-    section {
-      scroll-margin-top: 86px;
+      font-weight: 850;
     }
 
     h1 {
       max-width: 760px;
       margin-bottom: 22px;
-      font-size: clamp(2.8rem, 8vw, 7rem);
-      line-height: 0.94;
+      font-size: clamp(3rem, 7.7vw, 7.1rem);
+      line-height: 0.93;
       letter-spacing: 0;
     }
 
     .lead {
-      max-width: 650px;
+      max-width: 690px;
       margin-bottom: 28px;
       color: var(--muted);
-      font-size: clamp(1rem, 1.55vw, 1.28rem);
+      font-size: clamp(1.02rem, 1.5vw, 1.28rem);
     }
 
-    .hero-actions {
+    .actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .button {
-      min-height: 46px;
+      min-height: 48px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
+      gap: 8px;
       padding: 12px 16px;
-      border-radius: 8px;
       border: 1px solid var(--ink);
+      border-radius: 8px;
+      color: #fff;
       background: var(--ink);
-      color: white;
       text-decoration: none;
-      font-weight: 850;
+      font-weight: 900;
     }
 
     .button.secondary {
-      background: transparent;
       color: var(--ink);
+      background: transparent;
       border-color: var(--line);
     }
 
@@ -196,111 +208,151 @@
       outline: none;
     }
 
-    .stacked-facts {
+    .stats {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 10px;
-      max-width: 620px;
+      max-width: 760px;
     }
 
-    .fact {
-      min-height: 86px;
+    .stat {
+      min-height: 92px;
       padding: 14px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.76);
     }
 
-    .fact strong {
+    .stat strong {
       display: block;
       margin-bottom: 4px;
-      font-size: clamp(1.2rem, 1.6vw, 1.45rem);
+      font-size: clamp(1.35rem, 2vw, 1.75rem);
       line-height: 1;
     }
 
-    .fact span {
+    .stat span {
       color: var(--muted);
-      font-size: 0.92rem;
-      font-weight: 650;
+      font-size: 0.9rem;
+      font-weight: 750;
     }
 
-    .hero-gallery {
-      min-height: 620px;
-      display: flex;
+    .hero-wall {
+      min-width: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(135px, 1fr));
       align-items: center;
-      justify-content: center;
-      gap: clamp(12px, 2vw, 22px);
-      perspective: 1200px;
-      min-width: 0;
+      gap: clamp(12px, 2vw, 20px);
+    }
+
+    .phone-frame {
+      position: relative;
+      display: block;
       overflow: hidden;
-    }
-
-    .hero > div,
-    .project-inner > div {
-      min-width: 0;
-    }
-
-    .phone {
-      flex: 0 0 auto;
-      width: clamp(150px, 18vw, 235px);
       aspect-ratio: 9 / 20;
       padding: 9px;
       border-radius: 30px;
-      background: #101821;
+      background: #111923;
       box-shadow: var(--shadow);
-      overflow: hidden;
     }
 
-    .phone img {
+    .phone-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: 21px;
-      background: white;
+      background: #fff;
     }
 
-    .phone.native-frame {
+    .phone-frame.native {
       padding: 0;
       background: transparent;
-      box-shadow: 0 20px 44px rgba(17, 24, 31, 0.16);
+      box-shadow: 0 18px 48px rgba(18, 27, 36, 0.17);
     }
 
-    .phone.native-frame img {
-      border-radius: 22px;
+    .phone-frame.native img {
       object-fit: contain;
+      border-radius: 22px;
       background: transparent;
     }
 
-    .hero-gallery .phone:nth-child(1) {
-      transform: rotate(-5deg) translate(34px, 28px);
+    .hero-wall .phone-frame:nth-child(1) {
+      transform: rotate(-4deg) translateY(28px);
     }
 
-    .hero-gallery .phone:nth-child(2) {
-      width: clamp(175px, 20vw, 265px);
+    .hero-wall .phone-frame:nth-child(2) {
       transform: translateY(-18px);
     }
 
-    .hero-gallery .phone:nth-child(3) {
-      transform: rotate(4deg) translateY(44px);
+    .hero-wall .phone-frame:nth-child(3) {
+      transform: rotate(3deg) translateY(38px);
     }
 
-    .section-heading {
-      max-width: 1180px;
+    .section-head {
+      width: min(1220px, 100%);
       margin: 0 auto;
-      padding: 34px clamp(18px, 5vw, 76px) 12px;
+      padding: clamp(44px, 7vw, 78px) clamp(18px, 5vw, 76px) 18px;
     }
 
-    .section-heading h2 {
-      margin-bottom: 8px;
-      font-size: clamp(2rem, 4vw, 4rem);
-      line-height: 1;
+    .section-head h2 {
+      margin-bottom: 10px;
+      font-size: clamp(2.2rem, 4.6vw, 4.8rem);
+      line-height: 0.98;
       letter-spacing: 0;
     }
 
-    .section-heading p {
-      max-width: 720px;
+    .section-head p {
+      max-width: 780px;
       color: var(--muted);
       font-size: 1.05rem;
+    }
+
+    .overview {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      width: min(1220px, 100%);
+      margin: 0 auto;
+      padding: 0 clamp(18px, 5vw, 76px) clamp(40px, 6vw, 68px);
+    }
+
+    .overview-card {
+      min-height: 255px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--surface);
+      text-decoration: none;
+      transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+    }
+
+    .overview-card:hover,
+    .overview-card:focus-visible {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 18px 38px rgba(18, 27, 36, 0.1);
+      outline: none;
+    }
+
+    .overview-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.45rem;
+      line-height: 1.05;
+    }
+
+    .overview-card p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .overview-card span {
+      color: var(--accent);
+      font-size: 0.84rem;
+      font-weight: 900;
     }
 
     .project {
@@ -313,63 +365,73 @@
     }
 
     .project-inner {
-      width: min(1260px, 100%);
+      width: min(1320px, 100%);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: minmax(280px, 0.86fr) minmax(0, 1.14fr);
-      gap: clamp(24px, 4vw, 56px);
-      align-items: center;
-      padding: clamp(38px, 7vw, 86px) clamp(18px, 5vw, 76px);
-    }
-
-    .project-kicker {
-      display: inline-flex;
-      margin-bottom: 12px;
-      padding: 7px 11px;
-      border-radius: 8px;
-      background: #eef4f1;
-      color: var(--ink-soft);
-      font-size: 0.82rem;
-      font-weight: 850;
-    }
-
-    .project h3 {
-      margin-bottom: 12px;
-      font-size: clamp(2rem, 4vw, 4.2rem);
-      line-height: 0.98;
-      letter-spacing: 0;
+      grid-template-columns: minmax(280px, 0.78fr) minmax(0, 1.22fr);
+      gap: clamp(28px, 5vw, 70px);
+      align-items: start;
+      padding: clamp(46px, 7vw, 86px) clamp(18px, 5vw, 76px);
     }
 
     .project-copy {
-      margin-bottom: 22px;
+      position: sticky;
+      top: 96px;
+      min-width: 0;
+    }
+
+    .kicker {
+      display: inline-flex;
+      width: fit-content;
+      margin-bottom: 14px;
+      padding: 7px 11px;
+      border-radius: 8px;
+      color: var(--accent-ink);
+      background: var(--accent-soft);
+      font-size: 0.82rem;
+      font-weight: 900;
+    }
+
+    .project h3 {
+      margin-bottom: 14px;
+      font-size: clamp(2.3rem, 4.8vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .project-copy p {
       color: var(--muted);
       font-size: 1.04rem;
     }
 
-    .role-list {
+    .detail-grid {
       display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
-      margin: 0 0 22px;
-      padding: 0;
-      list-style: none;
+      margin: 24px 0;
     }
 
-    .role-list li {
-      display: grid;
-      grid-template-columns: 12px 1fr;
-      gap: 10px;
-      align-items: start;
-      color: var(--ink-soft);
-      font-weight: 650;
+    .detail {
+      min-height: 104px;
+      padding: 15px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.72);
     }
 
-    .role-list li::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      margin-top: 9px;
-      border-radius: 50%;
-      background: var(--accent, var(--teal));
+    .detail small {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .detail strong {
+      color: var(--ink-2);
+      font-size: 0.98rem;
+      line-height: 1.35;
     }
 
     .chips {
@@ -382,62 +444,118 @@
       padding: 7px 10px;
       border: 1px solid var(--line);
       border-radius: 8px;
-      color: var(--ink-soft);
-      background: white;
+      color: var(--ink-2);
+      background: #fff;
       font-size: 0.84rem;
-      font-weight: 800;
+      font-weight: 850;
     }
 
-    .media-strip {
+    .flow {
+      min-width: 0;
+      display: grid;
+      gap: 28px;
+    }
+
+    .flow-block {
+      min-width: 0;
+    }
+
+    .flow-heading {
       display: flex;
-      align-items: center;
+      align-items: end;
+      justify-content: space-between;
       gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .flow-heading h4 {
+      margin-bottom: 0;
+      font-size: clamp(1.32rem, 2.3vw, 2rem);
+      line-height: 1.08;
+    }
+
+    .flow-heading p {
+      max-width: 450px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .shot-strip {
+      display: flex;
+      gap: 14px;
       min-width: 0;
       overflow-x: auto;
-      overscroll-behavior-x: contain;
-      padding: 12px 4px 28px;
+      padding: 10px 4px 26px;
       scroll-snap-type: x mandatory;
+      overscroll-behavior-x: contain;
     }
 
-    .media-strip .phone {
-      width: clamp(162px, 18vw, 220px);
-      scroll-snap-align: center;
+    .shot {
+      flex: 0 0 auto;
+      width: clamp(160px, 17vw, 218px);
+      scroll-snap-align: start;
     }
 
-    .media-strip .phone:nth-child(even) {
-      transform: translateY(24px);
+    .shot button {
+      width: 100%;
+      display: block;
+      padding: 0;
+      border: 0;
+      border-radius: 30px;
+      background: transparent;
+      cursor: zoom-in;
+    }
+
+    .shot .phone-frame {
+      width: 100%;
+      box-shadow: 0 18px 42px rgba(18, 27, 36, 0.12);
+    }
+
+    .shot figcaption {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .shot button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
     }
 
     .project-randevum {
       --accent: var(--pink);
-    }
-
-    .project-randevum .project-kicker {
-      background: #fdeaf2;
-      color: #963054;
+      --accent-soft: #fdeaf2;
+      --accent-ink: #913052;
     }
 
     .project-mahal {
       --accent: var(--gold);
-    }
-
-    .project-mahal .project-kicker {
-      background: #f5efdc;
-      color: #745f1d;
+      --accent-soft: #f6efd8;
+      --accent-ink: #6f5a17;
     }
 
     .project-secure {
       --accent: var(--blue);
-    }
-
-    .project-secure .project-kicker {
-      background: #e9f0ff;
-      color: #244f9d;
+      --accent-soft: #e8f0ff;
+      --accent-ink: #214f9d;
     }
 
     .project-tap4pay {
       --accent: var(--green);
-      background: #f7faf8;
+      --accent-soft: #e7f4ed;
+      --accent-ink: #1f6d4c;
+    }
+
+    .video-layout {
+      display: grid;
+      grid-template-columns: minmax(260px, 0.85fr) minmax(300px, 1.15fr);
+      gap: clamp(28px, 5vw, 70px);
+      width: min(1320px, 100%);
+      margin: 0 auto;
+      padding: clamp(46px, 7vw, 86px) clamp(18px, 5vw, 76px);
     }
 
     .video-panel {
@@ -445,68 +563,195 @@
       justify-self: center;
     }
 
-    .video-frame {
+    .video-shell {
       width: 100%;
-      aspect-ratio: 9 / 16;
       overflow: hidden;
-      border-radius: 8px;
-      border: 1px solid var(--line);
-      background: #101821;
+      aspect-ratio: 9 / 16;
+      border: 1px solid #17212b;
+      border-radius: 30px;
+      background: #111923;
       box-shadow: var(--shadow);
     }
 
-    .video-frame video {
+    .video-shell video {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      background: #101821;
+      background: #111923;
     }
 
-    .footer {
-      padding: 34px clamp(18px, 5vw, 76px) 46px;
+    .video-meta {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .video-meta div {
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .video-meta strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1.05rem;
+    }
+
+    .video-meta span {
       color: var(--muted);
-      border-top: 1px solid var(--line);
-      background: #eef2ef;
+      font-size: 0.78rem;
+      font-weight: 800;
     }
 
-    .footer-inner {
+    .closing {
+      padding: clamp(40px, 7vw, 76px) clamp(18px, 5vw, 76px);
+      border-top: 1px solid var(--line);
+      background: #edf2ee;
+    }
+
+    .closing-inner {
       width: min(1180px, 100%);
       margin: 0 auto;
-      display: flex;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.45fr);
+      gap: 26px;
       align-items: center;
+    }
+
+    .closing h2 {
+      margin-bottom: 10px;
+      font-size: clamp(2rem, 4vw, 4.2rem);
+      line-height: 1;
+    }
+
+    .closing p {
+      max-width: 760px;
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .cv-box {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .cv-box strong {
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .cv-box code {
+      color: var(--ink-2);
+      word-break: break-word;
+    }
+
+    .lightbox {
+      width: min(94vw, 980px);
+      max-height: 92vh;
+      padding: 0;
+      border: 0;
+      border-radius: 8px;
+      background: #111923;
+      color: #fff;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.45);
+    }
+
+    .lightbox::backdrop {
+      background: rgba(10, 15, 20, 0.72);
+    }
+
+    .lightbox-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 260px;
+      min-height: min(760px, 86vh);
+    }
+
+    .lightbox-media {
+      display: grid;
+      place-items: center;
+      min-height: 0;
+      padding: 22px;
+      background: #05090d;
+    }
+
+    .lightbox-media img {
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .lightbox-info {
+      display: flex;
+      flex-direction: column;
       justify-content: space-between;
       gap: 18px;
-      flex-wrap: wrap;
+      padding: 20px;
+      border-left: 1px solid rgba(255, 255, 255, 0.12);
     }
 
-    .footer strong {
-      color: var(--ink);
+    .lightbox-info h3 {
+      margin-bottom: 8px;
+      font-size: 1.35rem;
+      line-height: 1.1;
     }
 
-    @media (max-width: 980px) {
+    .lightbox-info p {
+      color: #b7c4cf;
+      font-size: 0.94rem;
+    }
+
+    .close-button {
+      min-height: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      color: #fff;
+      background: transparent;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    @media (max-width: 1050px) {
       .hero,
-      .project-inner {
+      .project-inner,
+      .video-layout,
+      .closing-inner {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        padding-top: 34px;
+      .project-copy {
+        position: static;
       }
 
-      .hero-gallery {
-        min-height: auto;
-        justify-content: flex-start;
+      .overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero-wall {
+        display: flex;
         overflow-x: auto;
-        overflow-y: visible;
-        padding: 22px 4px 34px;
+        padding: 20px 4px 34px;
+        scroll-snap-type: x mandatory;
       }
 
-      .video-panel {
-        justify-self: stretch;
+      .hero-wall .phone-frame {
+        flex: 0 0 210px;
+        scroll-snap-align: center;
+      }
+
+      .hero-wall .phone-frame:nth-child(1),
+      .hero-wall .phone-frame:nth-child(2),
+      .hero-wall .phone-frame:nth-child(3) {
+        transform: none;
       }
     }
 
-    @media (max-width: 680px) {
+    @media (max-width: 720px) {
       .site-header {
         align-items: flex-start;
         flex-wrap: wrap;
@@ -515,9 +760,8 @@
 
       .nav-links {
         width: 100%;
-        max-width: none;
-        justify-content: flex-start;
         flex-wrap: wrap;
+        justify-content: flex-start;
         font-size: 0.86rem;
       }
 
@@ -525,20 +769,28 @@
         padding: 7px 8px;
       }
 
-      .hero {
-        min-height: auto;
-        padding: 32px 16px 34px;
+      .hero,
+      .section-head,
+      .overview,
+      .project-inner,
+      .video-layout,
+      .closing {
+        padding-left: 16px;
+        padding-right: 16px;
       }
 
       h1 {
-        font-size: clamp(2.5rem, 17vw, 4.4rem);
+        font-size: clamp(2.55rem, 16vw, 4.6rem);
       }
 
-      .stacked-facts {
+      .stats,
+      .overview,
+      .detail-grid,
+      .video-meta {
         grid-template-columns: 1fr;
       }
 
-      .hero-actions {
+      .actions {
         display: grid;
       }
 
@@ -546,231 +798,512 @@
         width: 100%;
       }
 
-      .hero-gallery .phone,
-      .hero-gallery .phone:nth-child(2),
-      .media-strip .phone {
-        width: 176px;
+      .hero-wall .phone-frame,
+      .shot {
+        width: 174px;
+        flex-basis: 174px;
       }
 
-      .hero-gallery .phone:nth-child(1),
-      .hero-gallery .phone:nth-child(2),
-      .hero-gallery .phone:nth-child(3),
-      .media-strip .phone:nth-child(even) {
-        transform: none;
+      .flow-heading {
+        display: block;
       }
 
-      .section-heading,
-      .project-inner,
-      .footer {
-        padding-left: 16px;
-        padding-right: 16px;
+      .flow-heading h4 {
+        margin-bottom: 6px;
       }
 
-      .project h3 {
-        font-size: clamp(2rem, 13vw, 3.5rem);
+      .lightbox {
+        width: 96vw;
+      }
+
+      .lightbox-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .lightbox-info {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
       }
     }
   </style>
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Mahmut Dal portfolyo ana sayfa">
-      <span class="brand-mark" aria-hidden="true">MD</span>
+    <a class="brand" href="#top" aria-label="Portfolyo ana sayfa">
+      <span class="brand-mark">MD</span>
       <span>Mahmut Dal</span>
     </a>
     <nav class="nav-links" aria-label="Sayfa bolumleri">
       <a href="#projeler">Projeler</a>
-      <a href="#demo">Demo</a>
-      <a href="#iletisim">CV Linki</a>
+      <a href="#randevum">Randevum</a>
+      <a href="#mahal">Mahal</a>
+      <a href="#secure">Secure</a>
+      <a href="#tap4pay">Tap4Pay</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div>
-        <p class="eyebrow">Flutter odakli mobil urun portfolyosu</p>
-        <h1 id="hero-title">Mobil Portfolyo</h1>
-        <p class="lead">Randevu, proje takip, guvenlik tarama ve odeme akislari icin tasarlanmis mobil uygulama ekranlari. Bu sayfa CV'den tek linkle acilabilecek sekilde statik ve hizli yayina hazirlandi.</p>
-        <div class="hero-actions">
-          <a class="button" href="#projeler">Projeleri Gor</a>
-          <a class="button secondary" href="#demo">Video Demoyu Ac</a>
+        <p class="eyebrow">Mobil uygulama gelistirme ve urun arayuzu</p>
+        <h1 id="hero-title">Mobil Uygulama Portfolyosu</h1>
+        <p class="lead">Randevu alma, proje takip, mobil guvenlik tarama ve odeme akislari icin hazirlanmis uygulama ekranlari. Bu portfolyo CV linki olarak tek sayfada proje kapsamlarini, ekran akislari ve demo videosunu gosterir.</p>
+        <div class="actions">
+          <a class="button" href="#projeler">Projeleri Incele</a>
+          <a class="button secondary" href="#tap4pay">Video Demoya Git</a>
         </div>
-        <div class="stacked-facts" aria-label="Portfolyo ozeti">
-          <div class="fact">
+        <div class="stats" aria-label="Portfolyo ozeti">
+          <div class="stat">
             <strong>4</strong>
-            <span>mobil proje vitrini</span>
+            <span>uygulama projesi</span>
           </div>
-          <div class="fact">
-            <strong>13</strong>
-            <span>optimize ekran ve demo</span>
+          <div class="stat">
+            <strong>30</strong>
+            <span>ekran goruntusu</span>
           </div>
-          <div class="fact">
+          <div class="stat">
+            <strong>1</strong>
+            <span>video demo</span>
+          </div>
+          <div class="stat">
             <strong>2025-2026</strong>
-            <span>uygulama arsivi</span>
+            <span>mobil urun arsivi</span>
           </div>
         </div>
       </div>
 
-      <div class="hero-gallery" aria-label="One cikan uygulama ekranlari">
-        <figure class="phone">
-          <img src="./assets/images/randevum-shop.jpg" alt="Randevum isletme secim ekrani">
+      <div class="hero-wall" aria-label="One cikan ekranlar">
+        <figure class="phone-frame">
+          <img src="./portfolio assets/1 Randevum/randevu adımları/3.jpg" alt="Randevum tarih ve saat secim ekrani">
         </figure>
-        <figure class="phone">
-          <img src="./assets/images/mahal-projects.png" alt="Mahal proje listesi ekrani">
+        <figure class="phone-frame">
+          <img src="./portfolio assets/mahal/user/IMG_0489.PNG" alt="Mahal proje detay ekrani">
         </figure>
-        <figure class="phone native-frame">
-          <img src="./assets/images/secure-dashboard.png" alt="CYNTE Antivirus durum ekrani">
+        <figure class="phone-frame native">
+          <img src="./portfolio assets/2 Secure App/IMG_8774.PNG" alt="CYNTE Antivirus guncel durum ekrani">
         </figure>
       </div>
     </section>
 
-    <section class="section-heading" id="projeler">
-      <h2>Projeler</h2>
-      <p>Her uygulama, farkli bir urun ihtiyacina odaklanan mobil arayuz ve akis calismasini gosterir.</p>
+    <section class="section-head" id="projeler">
+      <h2>Proje Ozeti</h2>
+      <p>Her proje, tek bir ekran vitrininden daha fazlasini gosterecek sekilde akislara ayrildi. Boylece CV linkini acan kisi uygulamanin hangi problem icin tasarlandigini ve hangi ekranlardan olustugunu hizli okuyabilir.</p>
     </section>
 
-    <section class="project project-randevum" aria-labelledby="randevum-title">
-      <div class="project-inner">
+    <section class="overview" aria-label="Proje kartlari">
+      <a class="overview-card" style="--accent: var(--pink)" href="#randevum">
         <div>
-          <span class="project-kicker">Randevu ve isletme yonetimi</span>
-          <h3 id="randevum-title">Randevum</h3>
-          <p class="project-copy">Kuafor ve guzellik salonlari icin musteri randevu akislari, isletme kurulumu, personel secimi, hizmet/fiyat yonetimi ve rol bazli ekranlardan olusan mobil uygulama.</p>
-          <ul class="role-list">
-            <li>Telefon dogrulama, profil tamamlama ve isletme secimi akislari.</li>
-            <li>Admin tarafinda isletme bilgisi, konum, personel ve hizmet kurulumu.</li>
-            <li>Kullanici tarafinda salon, personel, hizmet, tarih ve saat secimi.</li>
-          </ul>
-          <div class="chips" aria-label="Randevum teknolojileri">
+          <strong>Randevum</strong>
+          <p>Kuafor ve guzellik salonlari icin musteri randevusu, isletme secimi, hizmet secimi ve yonetim akislari.</p>
+        </div>
+        <span>11 ekran</span>
+      </a>
+      <a class="overview-card" style="--accent: var(--gold)" href="#mahal">
+        <div>
+          <strong>Mahal</strong>
+          <p>Insaat projeleri icin kullanici ve yonetici deneyimini ayiran takip, destek ve proje durum ekranlari.</p>
+        </div>
+        <span>11 ekran</span>
+      </a>
+      <a class="overview-card" style="--accent: var(--blue)" href="#secure">
+        <div>
+          <strong>CYNTE Antivirus</strong>
+          <p>Mobil guvenlik uygulamasi icin onboarding, tarama, sonuc ve rapor ekranlari.</p>
+        </div>
+        <span>8 ekran</span>
+      </a>
+      <a class="overview-card" style="--accent: var(--green)" href="#tap4pay">
+        <div>
+          <strong>Tap4Pay</strong>
+          <p>Odeme akisini hareketli olarak gosteren mobil demo videosu.</p>
+        </div>
+        <span>1 video</span>
+      </a>
+    </section>
+
+    <article class="project project-randevum" id="randevum">
+      <div class="project-inner">
+        <div class="project-copy">
+          <span class="kicker">Randevu ve salon yonetimi</span>
+          <h3>Randevum</h3>
+          <p>Randevum, kuafor ve guzellik salonlarinda musteri tarafindaki randevu alma deneyimi ile isletme tarafindaki kurulum ve ozellestirme akisini tek uygulamada birlestiren mobil urun calismasi.</p>
+          <div class="detail-grid">
+            <div class="detail">
+              <small>Problem</small>
+              <strong>Salon, personel, hizmet ve saat secimini tek akis icinde basitlestirmek.</strong>
+            </div>
+            <div class="detail">
+              <small>Cozum</small>
+              <strong>Telefon girisi, hizmet secimi, tarih/saat secimi ve onay adimlariyla yonlendirilmis randevu deneyimi.</strong>
+            </div>
+            <div class="detail">
+              <small>Rolum</small>
+              <strong>Mobil UI, Flutter ekranlari, Firebase tabanli veri ve isletme akislari.</strong>
+            </div>
+            <div class="detail">
+              <small>Kapsam</small>
+              <strong>Login, profil, tema ozellestirme, randevu adimlari ve isletme vitrin ekranlari.</strong>
+            </div>
+          </div>
+          <div class="chips">
             <span class="chip">Flutter</span>
             <span class="chip">Firebase</span>
             <span class="chip">Cloud Functions</span>
             <span class="chip">Mobile UI</span>
+            <span class="chip">Appointment Flow</span>
           </div>
         </div>
-
-        <div class="media-strip" aria-label="Randevum ekran goruntuleri">
-          <figure class="phone">
-            <img src="./assets/images/randevum-login.jpg" alt="Randevum telefon giris ekrani" loading="lazy">
-          </figure>
-          <figure class="phone">
-            <img src="./assets/images/randevum-shop.jpg" alt="Randevum dukkan secim ekrani" loading="lazy">
-          </figure>
-          <figure class="phone">
-            <img src="./assets/images/randevum-setup.jpg" alt="Randevum isletme bilgileri kurulum ekrani" loading="lazy">
-          </figure>
-          <figure class="phone">
-            <img src="./assets/images/randevum-services.jpg" alt="Randevum hizmet turu secim ekrani" loading="lazy">
-          </figure>
+        <div class="flow">
+          <section class="flow-block">
+            <div class="flow-heading">
+              <h4>Login ve kimlik dogrulama</h4>
+              <p>Telefon girisi, OTP dogrulama ve profil tamamlama ekranlari.</p>
+            </div>
+            <div class="shot-strip" data-gallery="randevum-login"></div>
+          </section>
+          <section class="flow-block">
+            <div class="flow-heading">
+              <h4>Isletme ozellestirme</h4>
+              <p>Isletme profilini, temayi ve yonetim arayuzunu sekillendiren ekranlar.</p>
+            </div>
+            <div class="shot-strip" data-gallery="randevum-customization"></div>
+          </section>
+          <section class="flow-block">
+            <div class="flow-heading">
+              <h4>Randevu adimlari</h4>
+              <p>Salon, personel, hizmet, tarih/saat ve randevu onayi akisi.</p>
+            </div>
+            <div class="shot-strip" data-gallery="randevum-booking"></div>
+          </section>
         </div>
       </div>
-    </section>
+    </article>
 
-    <section class="project project-mahal" aria-labelledby="mahal-title">
+    <article class="project project-mahal" id="mahal">
       <div class="project-inner">
-        <div>
-          <span class="project-kicker">Insaat ve site proje takibi</span>
-          <h3 id="mahal-title">Mahal</h3>
-          <p class="project-copy">Insaat ve bina projelerini listeleme, durum filtreleme, ilerleme takibi, proje secimi ve kullanici destek akislari icin hazirlanmis mobil uygulama arayuzu.</p>
-          <ul class="role-list">
-            <li>Devam eden ve tamamlanan projeleri durum bilgisiyle takip etme.</li>
-            <li>Konum, daire sayisi, sorumlu kisi ve is kalemi bilgilerinin hizli taranmasi.</li>
-            <li>Profil, destek hatti, guvenli cikis ve hesap silme modal akislari.</li>
-          </ul>
-          <div class="chips" aria-label="Mahal odak alanlari">
+        <div class="project-copy">
+          <span class="kicker">Insaat ve proje takip</span>
+          <h3>Mahal</h3>
+          <p>Mahal, insaat ve bina projelerinde kullanici ve yonetici taraflarini ayiran; proje listesi, ilerleme durumu, destek hatti, profil ve raporlama ekranlarini kapsayan mobil uygulama deneyimi.</p>
+          <div class="detail-grid">
+            <div class="detail">
+              <small>Problem</small>
+              <strong>Proje sureci, lokasyon, sorumlu kisi ve ilerleme durumunu mobilde kolay takip ettirmek.</strong>
+            </div>
+            <div class="detail">
+              <small>Cozum</small>
+              <strong>Rol bazli login, proje kartlari, detay sayfalari ve yonetici rapor ekranlari.</strong>
+            </div>
+            <div class="detail">
+              <small>Rolum</small>
+              <strong>Mobil arayuz akisi, sayfa hiyerarsisi, kullanici ve yonetici ekran kurgusu.</strong>
+            </div>
+            <div class="detail">
+              <small>Kapsam</small>
+              <strong>Login, kullanici proje takibi, destek/profil, yonetici kontrol ve rapor ekranlari.</strong>
+            </div>
+          </div>
+          <div class="chips">
             <span class="chip">Project Tracking</span>
-            <span class="chip">iOS UI</span>
+            <span class="chip">Role Based UI</span>
             <span class="chip">Status Filters</span>
             <span class="chip">Support Flow</span>
+            <span class="chip">Admin Views</span>
           </div>
         </div>
-
-        <div class="media-strip" aria-label="Mahal ekran goruntuleri">
-          <figure class="phone">
-            <img src="./assets/images/mahal-projects.png" alt="Mahal proje listesi" loading="lazy">
-          </figure>
-          <figure class="phone">
-            <img src="./assets/images/mahal-select.png" alt="Mahal insaat secim ekrani" loading="lazy">
-          </figure>
-          <figure class="phone">
-            <img src="./assets/images/mahal-profile.png" alt="Mahal profil guncelleme ekrani" loading="lazy">
-          </figure>
-          <figure class="phone">
-            <img src="./assets/images/mahal-logout.png" alt="Mahal cikis modal ekrani" loading="lazy">
-          </figure>
+        <div class="flow">
+          <section class="flow-block">
+            <div class="flow-heading">
+              <h4>Login ve kayit</h4>
+              <p>Kullanici girisi, kayit ve baslangic ekranlari.</p>
+            </div>
+            <div class="shot-strip" data-gallery="mahal-login"></div>
+          </section>
+          <section class="flow-block">
+            <div class="flow-heading">
+              <h4>Kullanici deneyimi</h4>
+              <p>Proje listesi, proje detaylari, destek hatti ve profil islemleri.</p>
+            </div>
+            <div class="shot-strip" data-gallery="mahal-user"></div>
+          </section>
+          <section class="flow-block">
+            <div class="flow-heading">
+              <h4>Yonetici deneyimi</h4>
+              <p>Yonetim, proje durumu, rapor ve kontrol ekranlari.</p>
+            </div>
+            <div class="shot-strip" data-gallery="mahal-admin"></div>
+          </section>
         </div>
       </div>
-    </section>
+    </article>
 
-    <section class="project project-secure" aria-labelledby="secure-title">
+    <article class="project project-secure" id="secure">
       <div class="project-inner">
-        <div>
-          <span class="project-kicker">Guvenlik tarama prototipi</span>
-          <h3 id="secure-title">CYNTE Antivirus</h3>
-          <p class="project-copy">Mobil cihaz icin zararlı yazilim tarama deneyimini gosteren Android arayuzu. Onboarding, tarama animasyonu, durum ozeti ve rapor ekranlari ayni urun diliyle tasarlandi.</p>
-          <ul class="role-list">
-            <li>Tarama baslatma, aktif tarama ve tamamlanan tarama durumlari.</li>
-            <li>Bulunan tehdit sayisi, sure ve taranan dosya adedi gibi rapor metrikleri.</li>
-            <li>Karanlik tema, yuksek kontrastli aksiyonlar ve sade guvenlik ikonografisi.</li>
-          </ul>
-          <div class="chips" aria-label="CYNTE odak alanlari">
+        <div class="project-copy">
+          <span class="kicker">Mobil guvenlik tarama prototipi</span>
+          <h3>CYNTE Antivirus</h3>
+          <p>CYNTE Antivirus, Android cihazda zararlı yazilim tarama deneyimini gosteren karanlik temali mobil arayuz calismasi. Akis; tanitim, aktif tarama, sonuc ozeti, tehdit raporu ve ayarlar ekranlarindan olusur.</p>
+          <div class="detail-grid">
+            <div class="detail">
+              <small>Problem</small>
+              <strong>Tarama sonucunu kullaniciya net, hizli ve guven veren bir arayuzle anlatmak.</strong>
+            </div>
+            <div class="detail">
+              <small>Cozum</small>
+              <strong>Durum ikonlari, tarama raporu ve tek ana aksiyon uzerine kurulu sade deneyim.</strong>
+            </div>
+            <div class="detail">
+              <small>Rolum</small>
+              <strong>Mobil ekran tasarimi, prototip akisi ve karanlik tema UI sistemi.</strong>
+            </div>
+            <div class="detail">
+              <small>Kapsam</small>
+              <strong>Onboarding, cihaz tarama, rapor, dashboard, ayarlar ve sonuc ekranlari.</strong>
+            </div>
+          </div>
+          <div class="chips">
             <span class="chip">Android UI</span>
             <span class="chip">Dark Mode</span>
             <span class="chip">Security Flow</span>
             <span class="chip">Prototype</span>
+            <span class="chip">Scan Report</span>
           </div>
         </div>
-
-        <div class="media-strip" aria-label="CYNTE Antivirus ekran goruntuleri">
-          <figure class="phone native-frame">
-            <img src="./assets/images/secure-welcome.png" alt="CYNTE Antivirus hos geldin ekrani" loading="lazy">
-          </figure>
-          <figure class="phone native-frame">
-            <img src="./assets/images/secure-scanning.png" alt="CYNTE Antivirus cihaz taraniyor ekrani" loading="lazy">
-          </figure>
-          <figure class="phone native-frame">
-            <img src="./assets/images/secure-dashboard.png" alt="CYNTE Antivirus guncel durum ekrani" loading="lazy">
-          </figure>
-          <figure class="phone native-frame">
-            <img src="./assets/images/secure-report.png" alt="CYNTE Antivirus tarama raporu ekrani" loading="lazy">
-          </figure>
+        <div class="flow">
+          <section class="flow-block">
+            <div class="flow-heading">
+              <h4>Tarama akisi</h4>
+              <p>Tanitimdan rapora kadar tum guvenlik uygulamasi ekranlari.</p>
+            </div>
+            <div class="shot-strip" data-gallery="secure-flow"></div>
+          </section>
         </div>
       </div>
-    </section>
+    </article>
 
-    <section class="project project-tap4pay" id="demo" aria-labelledby="tap4pay-title">
-      <div class="project-inner">
-        <div>
-          <span class="project-kicker">Video demo</span>
-          <h3 id="tap4pay-title">Tap4Pay</h3>
-          <p class="project-copy">Odeme deneyimi icin kaydedilmis mobil demo videosu. CV'de portfolyo linki acildiginda ekran goruntulerinin yaninda hareketli urun akisini da gostermek icin eklendi.</p>
-          <ul class="role-list">
-            <li>Uygulama deneyimini statik ekran yerine video uzerinden izletme.</li>
-            <li>Mobil akisin ritmini, gecislerini ve temel islem adimlarini gosteren demo.</li>
-            <li>Tarayici icinde kontrol edilebilir video oynatici.</li>
-          </ul>
-          <div class="chips" aria-label="Tap4Pay odak alanlari">
+    <article class="project project-tap4pay" id="tap4pay">
+      <div class="video-layout">
+        <div class="project-copy">
+          <span class="kicker">Odeme demo videosu</span>
+          <h3>Tap4Pay</h3>
+          <p>Tap4Pay, odeme ekranlarinin hareketli akis olarak izlenebilmesi icin eklenen mobil demo videosu. Portfolyoda sadece statik ekran degil, uygulama gecislerinin ve temel islem ritminin de gorulmesini saglar.</p>
+          <div class="detail-grid">
+            <div class="detail">
+              <small>Problem</small>
+              <strong>Odeme deneyimini tek bir ekran goruntusuyle anlatmak yetersiz kaliyor.</strong>
+            </div>
+            <div class="detail">
+              <small>Cozum</small>
+              <strong>Mobil video demo ile tutar girisi ve odeme adimlarini hareketli gostermek.</strong>
+            </div>
+            <div class="detail">
+              <small>Format</small>
+              <strong>Dikey mobil ekran kaydi, tarayicida kontrol edilebilir video oynatici.</strong>
+            </div>
+            <div class="detail">
+              <small>Kullanim</small>
+              <strong>CV linkinde hizli incelenebilecek urun demo alani.</strong>
+            </div>
+          </div>
+          <div class="chips">
             <span class="chip">Payment Flow</span>
             <span class="chip">Mobile Demo</span>
-            <span class="chip">Video</span>
+            <span class="chip">Video Showcase</span>
           </div>
         </div>
-
-        <div class="video-panel">
-          <div class="video-frame">
-            <video controls playsinline preload="metadata" poster="./assets/images/tap4pay-poster.png" src="./assets/video/tap4pay-demo.mp4">
-              Tarayiciniz video etiketini desteklemiyor.
-            </video>
+        <div>
+          <div class="video-panel">
+            <div class="video-shell">
+              <video controls playsinline preload="metadata" poster="./portfolio assets/3 tap4pay/tap4pay-poster.png" src="./portfolio assets/3 tap4pay/25-07-11-17-22-53.MP4">
+                Tarayiciniz video etiketini desteklemiyor.
+              </video>
+            </div>
+            <div class="video-meta">
+              <div>
+                <strong>78 sn</strong>
+                <span>demo suresi</span>
+              </div>
+              <div>
+                <strong>720x1280</strong>
+                <span>mobil kayit</span>
+              </div>
+              <div>
+                <strong>MP4</strong>
+                <span>tarayici uyumlu</span>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="closing">
+      <div class="closing-inner">
+        <div>
+          <h2>CV icin hazir tek link</h2>
+          <p>Bu klasor GitHub'a yuklenip GitHub Pages aktif edildiginde portfolyo dogrudan repo ana adresinden acilir. Repo adi `portfolio` olursa beklenen link formati `https://kullanici-adin.github.io/portfolio/` olur.</p>
+        </div>
+        <div class="cv-box">
+          <strong>Yayin ayari</strong>
+          <code>Settings -> Pages -> Deploy from a branch -> main -> /root</code>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer" id="iletisim">
-    <div class="footer-inner">
-      <p><strong>CV linki:</strong> Bu sayfa dogrudan <code>/portfolio/</code> adresinden yayinlanmaya hazir.</p>
-      <p>Mahmut Dal - Mobil Uygulama Portfolyosu</p>
+  <dialog class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <div class="lightbox-media">
+        <img id="lightbox-image" alt="">
+      </div>
+      <div class="lightbox-info">
+        <div>
+          <h3 id="lightbox-title"></h3>
+          <p id="lightbox-copy"></p>
+        </div>
+        <button class="close-button" type="button" id="close-lightbox">Kapat</button>
+      </div>
     </div>
-  </footer>
+  </dialog>
+
+  <script>
+    const galleries = {
+      "randevum-login": {
+        project: "Randevum",
+        text: "Telefon girisi, dogrulama ve profil baslangic akisi.",
+        nativeFrame: false,
+        items: [
+          { src: "./portfolio assets/1 Randevum/login/1.jpg", title: "Telefon girisi" },
+          { src: "./portfolio assets/1 Randevum/login/2.jpg", title: "Dogrulama kodu" },
+          { src: "./portfolio assets/1 Randevum/login/3.jpg", title: "Profil tamamlama" }
+        ]
+      },
+      "randevum-customization": {
+        project: "Randevum",
+        text: "Isletme ve uygulama gorunumunu ozellestiren yonetim ekranlari.",
+        nativeFrame: false,
+        items: [
+          { src: "./portfolio assets/1 Randevum/özelleştirme /1.jpg", title: "Isletme ana ekran" },
+          { src: "./portfolio assets/1 Randevum/özelleştirme /2.jpg", title: "Profil ve ayarlar" },
+          { src: "./portfolio assets/1 Randevum/özelleştirme /3.jpg", title: "Gorunum ozellestirme" }
+        ]
+      },
+      "randevum-booking": {
+        project: "Randevum",
+        text: "Musterinin salon, personel, hizmet, tarih ve saat secerek randevu olusturdugu akis.",
+        nativeFrame: false,
+        items: [
+          { src: "./portfolio assets/1 Randevum/randevu adımları/1.jpg", title: "Salon secimi" },
+          { src: "./portfolio assets/1 Randevum/randevu adımları/2.jpg", title: "Personel secimi" },
+          { src: "./portfolio assets/1 Randevum/randevu adımları/3.jpg", title: "Hizmet secimi" },
+          { src: "./portfolio assets/1 Randevum/randevu adımları/4.jpg", title: "Tarih ve saat" },
+          { src: "./portfolio assets/1 Randevum/randevu adımları/5.jpg", title: "Randevu onayi" }
+        ]
+      },
+      "mahal-login": {
+        project: "Mahal",
+        text: "Mahal uygulamasinin giris ve kullanici baslangic ekranlari.",
+        nativeFrame: false,
+        items: [
+          { src: "./portfolio assets/mahal/login/IMG_0493.PNG", title: "Giris ekrani" },
+          { src: "./portfolio assets/mahal/login/IMG_0496.PNG", title: "Kayit ekrani" },
+          { src: "./portfolio assets/mahal/login/IMG_0541.PNG", title: "Baslangic ekrani" }
+        ]
+      },
+      "mahal-user": {
+        project: "Mahal",
+        text: "Kullanicinin projeleri, destek hatti ve profil bilgilerini takip ettigi ekranlar.",
+        nativeFrame: false,
+        items: [
+          { src: "./portfolio assets/mahal/user/IMG_0487.PNG", title: "Ana sayfa" },
+          { src: "./portfolio assets/mahal/user/IMG_0488.PNG", title: "Proje listesi" },
+          { src: "./portfolio assets/mahal/user/IMG_0489.PNG", title: "Proje detayi" },
+          { src: "./portfolio assets/mahal/user/IMG_0490.PNG", title: "Profil ve destek" }
+        ]
+      },
+      "mahal-admin": {
+        project: "Mahal",
+        text: "Yonetici tarafinda proje kontrolu, rapor ve durum takibi ekranlari.",
+        nativeFrame: false,
+        items: [
+          { src: "./portfolio assets/mahal/yönetici/IMG_0501.PNG", title: "Yonetici paneli" },
+          { src: "./portfolio assets/mahal/yönetici/IMG_0504.PNG", title: "Proje kontrolu" },
+          { src: "./portfolio assets/mahal/yönetici/IMG_0506.PNG", title: "Raporlama" },
+          { src: "./portfolio assets/mahal/yönetici/IMG_0508.PNG", title: "Durum takibi" }
+        ]
+      },
+      "secure-flow": {
+        project: "CYNTE Antivirus",
+        text: "Mobil guvenlik uygulamasinin onboarding, tarama, sonuc ve ayar ekranlari.",
+        nativeFrame: true,
+        items: [
+          { src: "./portfolio assets/2 Secure App/IMG_8771.PNG", title: "Hos geldin" },
+          { src: "./portfolio assets/2 Secure App/IMG_8772.PNG", title: "Koruma tanitimi" },
+          { src: "./portfolio assets/2 Secure App/IMG_8773.PNG", title: "Cihaz taraniyor" },
+          { src: "./portfolio assets/2 Secure App/IMG_8774.PNG", title: "Guncel durum" },
+          { src: "./portfolio assets/2 Secure App/IMG_8775.PNG", title: "Tarama raporu" },
+          { src: "./portfolio assets/2 Secure App/IMG_8776.PNG", title: "Tehdit detayi" },
+          { src: "./portfolio assets/2 Secure App/IMG_8777.PNG", title: "Ayarlar" },
+          { src: "./portfolio assets/2 Secure App/IMG_8785.JPG", title: "Sonuc ekrani" }
+        ]
+      }
+    };
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxTitle = document.getElementById("lightbox-title");
+    const lightboxCopy = document.getElementById("lightbox-copy");
+
+    Object.entries(galleries).forEach(([id, gallery]) => {
+      const target = document.querySelector(`[data-gallery="${id}"]`);
+      if (!target) return;
+
+      gallery.items.forEach((item, index) => {
+        const figure = document.createElement("figure");
+        figure.className = "shot";
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.setAttribute("aria-label", `${gallery.project}: ${item.title} ekranini buyut`);
+
+        const frame = document.createElement("span");
+        frame.className = `phone-frame${gallery.nativeFrame ? " native" : ""}`;
+
+        const img = document.createElement("img");
+        img.src = item.src;
+        img.alt = `${gallery.project} - ${item.title}`;
+        img.loading = index < 2 ? "eager" : "lazy";
+
+        const caption = document.createElement("figcaption");
+        caption.textContent = item.title;
+
+        frame.appendChild(img);
+        button.appendChild(frame);
+        figure.appendChild(button);
+        figure.appendChild(caption);
+        target.appendChild(figure);
+
+        button.addEventListener("click", () => {
+          lightboxImage.src = item.src;
+          lightboxImage.alt = `${gallery.project} - ${item.title}`;
+          lightboxTitle.textContent = item.title;
+          lightboxCopy.textContent = `${gallery.project}. ${gallery.text}`;
+          if (typeof lightbox.showModal === "function") {
+            lightbox.showModal();
+          }
+        });
+      });
+    });
+
+    document.getElementById("close-lightbox").addEventListener("click", () => {
+      lightbox.close();
+    });
+
+    lightbox.addEventListener("click", (event) => {
+      if (event.target === lightbox) {
+        lightbox.close();
+      }
+    });
+  </script>
 </body>
 </html>
