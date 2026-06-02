@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mahmut Dal - Mobil Uygulama Portfolyosu</title>
-  <meta name="description" content="Mahmut Dal tarafindan hazirlanan mobil uygulama portfolyosu. Randevum, Mahal, CYNTE Antivirus ve Tap4Pay proje vitrinleri.">
+  <meta name="description" content="Mahmut Dal tarafindan hazirlanan mobil uygulama portfolyosu. Randevu Saati, Mahal, CYNTE Antivirus ve Tap4Pay proje vitrinleri.">
   <meta property="og:title" content="Mahmut Dal - Mobil Uygulama Portfolyosu">
   <meta property="og:description" content="Flutter, Firebase, mobil UI ve uygulama akislarini gosteren detayli portfolyo.">
   <meta property="og:type" content="website">
@@ -513,6 +513,113 @@
       --accent-ink: #913052;
     }
 
+    .project-randevum .project-inner {
+      width: min(1480px, 100%);
+      grid-template-columns: minmax(300px, 0.58fr) minmax(0, 1.42fr);
+    }
+
+    .randevum-showcase {
+      min-width: 0;
+      display: grid;
+      gap: 30px;
+    }
+
+    .randevum-feature-card {
+      overflow: hidden;
+      border: 1px solid rgba(220, 228, 223, 0.95);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 18px 44px rgba(18, 27, 36, 0.11);
+    }
+
+    .randevum-feature-card img {
+      width: 100%;
+      aspect-ratio: 1794 / 876;
+      object-fit: cover;
+    }
+
+    .randevum-brand-panel {
+      display: grid;
+      grid-template-columns: minmax(230px, 0.48fr) minmax(0, 0.52fr);
+      gap: 14px;
+      align-items: stretch;
+    }
+
+    .randevum-icon-card {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 16px;
+      align-items: center;
+      min-height: 170px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .randevum-icon-card img {
+      width: clamp(92px, 10vw, 130px);
+      aspect-ratio: 1;
+      border-radius: 26px;
+      box-shadow: 0 16px 34px rgba(223, 63, 120, 0.2);
+    }
+
+    .randevum-icon-copy small {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent-ink);
+      font-size: 0.76rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .randevum-icon-copy strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--ink);
+      font-size: clamp(1.35rem, 2.1vw, 2rem);
+      line-height: 1.05;
+    }
+
+    .randevum-icon-copy p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .randevum-release-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .randevum-release-list div {
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: linear-gradient(145deg, #ffffff, #f5fbfa);
+    }
+
+    .randevum-release-list strong {
+      color: var(--ink);
+      font-size: clamp(1.35rem, 2.2vw, 2.15rem);
+      line-height: 1;
+    }
+
+    .randevum-release-list span {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-weight: 850;
+    }
+
+    .market-strip .shot {
+      width: clamp(150px, 14vw, 190px);
+    }
+
     .project-mahal {
       --accent: var(--gold);
       --accent-soft: #f6efd8;
@@ -661,6 +768,10 @@
         grid-template-columns: 1fr;
       }
 
+      .project-randevum .project-inner {
+        grid-template-columns: 1fr;
+      }
+
       .project-copy {
         position: static;
       }
@@ -722,7 +833,9 @@
       .stats,
       .overview,
       .detail-grid,
-      .video-meta {
+      .video-meta,
+      .randevum-brand-panel,
+      .randevum-release-list {
         grid-template-columns: 1fr;
       }
 
@@ -738,6 +851,15 @@
       .shot {
         width: 174px;
         flex-basis: 174px;
+      }
+
+      .market-strip .shot {
+        width: 160px;
+        flex-basis: 160px;
+      }
+
+      .randevum-icon-card {
+        grid-template-columns: 1fr;
       }
 
       .flow-heading {
@@ -771,7 +893,7 @@
     </a>
     <nav class="nav-links" aria-label="Sayfa bolumleri">
       <a href="#projeler">Projeler</a>
-      <a href="#randevum">Randevum</a>
+      <a href="#randevum">Randevu Saati</a>
       <a href="#mahal">Mahal</a>
       <a href="#secure">Secure</a>
       <a href="#tap4pay">Tap4Pay</a>
@@ -793,8 +915,8 @@
             <span>uygulama projesi</span>
           </div>
           <div class="stat">
-            <strong>30</strong>
-            <span>ekran goruntusu</span>
+            <strong>40+</strong>
+            <span>ekran ve poster</span>
           </div>
           <div class="stat">
             <strong>1</strong>
@@ -808,8 +930,8 @@
       </div>
 
       <div class="hero-wall" aria-label="One cikan ekranlar">
-        <figure class="phone-frame">
-          <img src="./portfolio assets/1 Randevum/randevu adımları/3.jpg" alt="Randevum tarih ve saat secim ekrani">
+        <figure class="phone-frame native">
+          <img src="./portfolio assets/1 Randevum/iphone-mockups/home.png" alt="Randevu Saati ana sayfa iPhone mockup">
         </figure>
         <figure class="phone-frame">
           <img src="./portfolio assets/mahal/user/IMG_0487.PNG" alt="Mahal ana sayfa ekrani">
@@ -828,8 +950,8 @@
     <section class="overview" aria-label="Proje kartlari">
       <a class="overview-card" style="--accent: var(--pink)" href="#randevum">
         <div>
-          <strong>Randevum</strong>
-          <p>Kuafor ve guzellik salonlari icin musteri randevusu, isletme secimi, hizmet secimi ve yonetim akislari.</p>
+          <strong>Randevu Saati</strong>
+          <p>Kuafor ve berber randevusu icin app icon, market posterleri, iOS vitrin ekranlari ve rezervasyon akisi.</p>
         </div>
       </a>
       <a class="overview-card" style="--accent: var(--gold)" href="#mahal">
@@ -855,56 +977,82 @@
     <article class="project project-randevum" id="randevum">
       <div class="project-inner">
         <div class="project-copy">
-          <span class="kicker">Randevu ve salon yonetimi</span>
-          <h3>Randevum</h3>
-          <p>Randevum, kuafor ve guzellik salonlarinda musteri tarafindaki randevu alma deneyimi ile isletme tarafindaki kurulum ve ozellestirme akisini tek uygulamada birlestiren mobil urun calismasi.</p>
+          <span class="kicker">Randevu ve market vitrini</span>
+          <h3>Randevu Saati</h3>
+          <p>Randevu Saati, kuafor ve berber randevusu almayi hizlandiran mobil urun calismasi. Yeni vitrin seti app icon, feature graphic ve iOS market posterleriyle uygulamanin yayin hazirligini daha net gosterir.</p>
           <div class="detail-grid">
             <div class="detail">
               <small>Problem</small>
-              <strong>Salon, personel, hizmet ve saat secimini tek akis icinde basitlestirmek.</strong>
+              <strong>Musterinin uygun salon, personel, hizmet ve saat secimini tek akis icinde hizli tamamlamasi.</strong>
             </div>
             <div class="detail">
               <small>Cozum</small>
-              <strong>Telefon girisi, hizmet secimi, tarih/saat secimi ve onay adimlariyla yonlendirilmis randevu deneyimi.</strong>
+              <strong>Konum/arama, servis, personel, takvim, onay ve randevu gecmisi ekranlariyla yonlendirilmis rezervasyon deneyimi.</strong>
             </div>
             <div class="detail">
               <small>Rolum</small>
-              <strong>Mobil UI, Flutter ekranlari, Firebase tabanli veri ve isletme akislari.</strong>
+              <strong>Flutter arayuzleri, Firebase veri akisi, app icon, market posterleri ve yayin hazirligi.</strong>
             </div>
             <div class="detail">
               <small>Kapsam</small>
-              <strong>Login, profil, tema ozellestirme, randevu adimlari ve isletme vitrin ekranlari.</strong>
+              <strong>Splash, login, OTP, salon arama, ana sayfa, takvim, onay, profil ve iOS poster seti.</strong>
             </div>
           </div>
           <div class="chips">
             <span class="chip">Flutter</span>
             <span class="chip">Firebase</span>
-            <span class="chip">Cloud Functions</span>
-            <span class="chip">Mobile UI</span>
+            <span class="chip">iOS Posters</span>
+            <span class="chip">App Store Assets</span>
             <span class="chip">Appointment Flow</span>
           </div>
         </div>
-        <div class="flow">
+        <div class="flow randevum-showcase">
           <section class="flow-block">
             <div class="flow-heading">
-              <h4>Login ve kimlik dogrulama</h4>
-              <p>Telefon girisi, OTP dogrulama ve profil tamamlama ekranlari.</p>
+              <h4>Market posteri ve marka gorunumu</h4>
+              <p>Feature graphic, app icon ve yayin vitrininde kullanilacak ana gorsel dil.</p>
             </div>
-            <div class="shot-strip" data-gallery="randevum-login"></div>
+            <figure class="randevum-feature-card">
+              <img src="./portfolio assets/1 Randevum/feature/ozellik-grafigi.png" alt="Randevu Saati feature graphic">
+            </figure>
+          </section>
+          <section class="randevum-brand-panel" aria-label="Randevu Saati marka assetleri">
+            <div class="randevum-icon-card">
+              <img src="./portfolio assets/1 Randevum/appicon/appIcon.png" alt="Randevu Saati app icon">
+              <div class="randevum-icon-copy">
+                <small>App icon</small>
+                <strong>Randevu Saati</strong>
+                <p>Kuafor, berber ve randevu temalarini tek ikon dilinde birlestiren yeni uygulama kimligi.</p>
+              </div>
+            </div>
+            <div class="randevum-release-list" aria-label="Vitrin ozeti">
+              <div>
+                <strong>12</strong>
+                <span>iOS market posteri</span>
+              </div>
+              <div>
+                <strong>1</strong>
+                <span>app icon</span>
+              </div>
+              <div>
+                <strong>1</strong>
+                <span>feature graphic</span>
+              </div>
+            </div>
           </section>
           <section class="flow-block">
             <div class="flow-heading">
-              <h4>Isletme ozellestirme</h4>
-              <p>Isletme profilini, temayi ve yonetim arayuzunu sekillendiren ekranlar.</p>
+              <h4>Giris ve salon arama</h4>
+              <p>Splash, telefon girisi, OTP, profil ve salon arama ekranlari.</p>
             </div>
-            <div class="shot-strip" data-gallery="randevum-customization"></div>
+            <div class="shot-strip market-strip" data-gallery="randevum-auth"></div>
           </section>
           <section class="flow-block">
             <div class="flow-heading">
-              <h4>Randevu adimlari</h4>
-              <p>Salon, personel, hizmet, tarih/saat ve randevu onayi akisi.</p>
+              <h4>Randevu akisi ve profil</h4>
+              <p>Ana sayfa, personel, hizmet, takvim, onay, gecmis randevular ve profil ekranlari.</p>
             </div>
-            <div class="shot-strip" data-gallery="randevum-booking"></div>
+            <div class="shot-strip market-strip" data-gallery="randevum-user"></div>
           </section>
         </div>
       </div>
@@ -1087,36 +1235,30 @@
 
   <script>
     const galleries = {
-      "randevum-login": {
-        project: "Randevum",
-        text: "Telefon girisi, dogrulama ve profil baslangic akisi.",
+      "randevum-auth": {
+        project: "Randevu Saati",
+        text: "Splash, telefon girisi, OTP, profil ve salon arama ekranlari.",
         nativeFrame: false,
         items: [
-          { src: "./portfolio assets/1 Randevum/login/1.jpg", title: "Telefon girisi" },
-          { src: "./portfolio assets/1 Randevum/login/2.jpg", title: "Dogrulama kodu" },
-          { src: "./portfolio assets/1 Randevum/login/3.jpg", title: "Profil tamamlama" }
+          { src: "./portfolio assets/1 Randevum/ios-posters/login-shop-search/splash.png", title: "Splash" },
+          { src: "./portfolio assets/1 Randevum/ios-posters/login-shop-search/login.png", title: "Telefon girisi" },
+          { src: "./portfolio assets/1 Randevum/ios-posters/login-shop-search/otp.png", title: "OTP dogrulama" },
+          { src: "./portfolio assets/1 Randevum/ios-posters/login-shop-search/profile.png", title: "Profil" },
+          { src: "./portfolio assets/1 Randevum/ios-posters/login-shop-search/shop-search.png", title: "Salon arama" }
         ]
       },
-      "randevum-customization": {
-        project: "Randevum",
-        text: "Isletme ve uygulama gorunumunu ozellestiren yonetim ekranlari.",
+      "randevum-user": {
+        project: "Randevu Saati",
+        text: "Musterinin ana sayfadan randevu onayina ve profil takibine ilerledigi akis.",
         nativeFrame: false,
         items: [
-          { src: "./portfolio assets/1 Randevum/ozellestirme/1.jpg", title: "Isletme ana ekran" },
-          { src: "./portfolio assets/1 Randevum/ozellestirme/2.jpg", title: "Profil ve ayarlar" },
-          { src: "./portfolio assets/1 Randevum/ozellestirme/3.jpg", title: "Gorunum ozellestirme" }
-        ]
-      },
-      "randevum-booking": {
-        project: "Randevum",
-        text: "Musterinin salon, personel, hizmet, tarih ve saat secerek randevu olusturdugu akis.",
-        nativeFrame: false,
-        items: [
-          { src: "./portfolio assets/1 Randevum/randevu adımları/1.jpg", title: "Salon secimi" },
-          { src: "./portfolio assets/1 Randevum/randevu adımları/2.jpg", title: "Personel secimi" },
-          { src: "./portfolio assets/1 Randevum/randevu adımları/3.jpg", title: "Hizmet secimi" },
-          { src: "./portfolio assets/1 Randevum/randevu adımları/4.jpg", title: "Tarih ve saat" },
-          { src: "./portfolio assets/1 Randevum/randevu adımları/5.jpg", title: "Randevu onayi" }
+          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/home.png", title: "Ana sayfa" },
+          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/staff.png", title: "Personel" },
+          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/services.png", title: "Hizmetler" },
+          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/calendar.png", title: "Takvim" },
+          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/approved.png", title: "Onay" },
+          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/past.png", title: "Gecmis randevular" },
+          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/profile.png", title: "Profil" }
         ]
       },
       "mahal-login": {
@@ -1191,7 +1333,8 @@
         const img = document.createElement("img");
         img.src = item.src;
         img.alt = `${gallery.project} - ${item.title}`;
-        img.loading = "eager";
+        img.loading = "lazy";
+        img.decoding = "async";
 
         const caption = document.createElement("figcaption");
         caption.textContent = item.title;
