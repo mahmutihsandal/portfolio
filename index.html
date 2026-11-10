@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mahmut Dal - Mobil Uygulama Portfolyosu</title>
-  <meta name="description" content="Mahmut Dal tarafindan hazirlanan mobil uygulama portfolyosu. Randevu Saati, Mahal, CYNTE Antivirus ve Tap4Pay proje vitrinleri.">
-  <meta property="og:title" content="Mahmut Dal - Mobil Uygulama Portfolyosu">
-  <meta property="og:description" content="Flutter, Firebase, mobil UI ve uygulama akislarini gosteren detayli portfolyo.">
+  <title>Mahmut Dal - Yazılım Projeleri</title>
+  <meta name="description" content="Mahmut Dal yazılım portföyü: Dal Villaları rezervasyon ve operasyon otomasyonu, Mahal, CYNTE Antivirus ve Tap4Pay.">
+  <meta property="og:title" content="Mahmut Dal - Yazılım Projeleri">
+  <meta property="og:description" content="Web otomasyonu, rezervasyon sistemleri, mobil uygulamalar ve güvenli ödeme akışları üzerine seçili projeler.">
   <meta property="og:type" content="website">
   <style>
     :root {
@@ -18,7 +18,6 @@
       --page: #f6f8f5;
       --surface: #ffffff;
       --soft: #eef3ef;
-      --pink: #df3f78;
       --teal: #13998e;
       --gold: #b79a43;
       --blue: #2f71d2;
@@ -507,117 +506,83 @@
       outline-offset: 5px;
     }
 
-    .project-randevum {
-      --accent: var(--pink);
-      --accent-soft: #fdeaf2;
-      --accent-ink: #913052;
+    .project-villa {
+      --accent: var(--teal);
+      --accent-soft: #e4f5f0;
+      --accent-ink: #116558;
     }
 
-    .project-randevum .project-inner {
-      width: min(1480px, 100%);
-      grid-template-columns: minmax(300px, 0.58fr) minmax(0, 1.42fr);
-    }
-
-    .randevum-showcase {
-      min-width: 0;
-      display: grid;
-      gap: 30px;
-    }
-
-    .randevum-feature-card {
-      overflow: hidden;
-      border: 1px solid rgba(220, 228, 223, 0.95);
-      border-radius: 8px;
-      background: #fff;
-      box-shadow: 0 18px 44px rgba(18, 27, 36, 0.11);
-    }
-
-    .randevum-feature-card img {
-      width: 100%;
-      aspect-ratio: 1794 / 876;
-      object-fit: cover;
-    }
-
-    .randevum-brand-panel {
-      display: grid;
-      grid-template-columns: minmax(230px, 0.48fr) minmax(0, 0.52fr);
-      gap: 14px;
-      align-items: stretch;
-    }
-
-    .randevum-icon-card {
-      display: grid;
-      grid-template-columns: auto minmax(0, 1fr);
-      gap: 16px;
-      align-items: center;
-      min-height: 170px;
-      padding: 18px;
-      border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #fff;
-    }
-
-    .randevum-icon-card img {
-      width: clamp(92px, 10vw, 130px);
-      aspect-ratio: 1;
-      border-radius: 26px;
-      box-shadow: 0 16px 34px rgba(223, 63, 120, 0.2);
-    }
-
-    .randevum-icon-copy small {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--accent-ink);
-      font-size: 0.76rem;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .randevum-icon-copy strong {
-      display: block;
-      margin-bottom: 6px;
-      color: var(--ink);
-      font-size: clamp(1.35rem, 2.1vw, 2rem);
-      line-height: 1.05;
-    }
-
-    .randevum-icon-copy p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 0.93rem;
-    }
-
-    .randevum-release-list {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .randevum-release-list div {
-      min-height: 170px;
+    .hero-project-card {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 16px;
+      min-width: 0;
+      aspect-ratio: 9 / 20;
+      padding: clamp(16px, 2vw, 26px);
+      border-radius: 24px;
+      color: #fff;
+      background: linear-gradient(155deg, #123d38, #17695e);
+      box-shadow: var(--shadow);
+      text-decoration: none;
+    }
+
+    .hero-project-card small {
+      color: #c3e8df;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .hero-project-card strong {
+      display: block;
+      margin: 16px 0;
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      line-height: 1.08;
+      overflow-wrap: anywhere;
+    }
+
+    .hero-project-card span {
+      color: #e2f3ed;
+      font-size: 0.9rem;
+    }
+
+    .hero-project-card:focus-visible {
+      outline: 3px solid var(--teal);
+      outline-offset: 5px;
+    }
+
+    .villa-summary {
+      padding: clamp(22px, 3vw, 36px);
       border: 1px solid var(--line);
-      border-radius: 8px;
-      background: linear-gradient(145deg, #ffffff, #f5fbfa);
+      border-radius: 12px;
+      background: linear-gradient(145deg, #eaf6f1, #fff);
     }
 
-    .randevum-release-list strong {
-      color: var(--ink);
-      font-size: clamp(1.35rem, 2.2vw, 2.15rem);
-      line-height: 1;
+    .villa-summary h4 {
+      margin-bottom: 16px;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      line-height: 1.15;
     }
 
-    .randevum-release-list span {
+    .villa-summary p {
       color: var(--muted);
-      font-size: 0.86rem;
-      font-weight: 850;
     }
 
-    .market-strip .shot {
-      width: clamp(150px, 14vw, 190px);
+    .villa-summary .stats {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin: 24px 0;
+    }
+
+    .villa-steps {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding-left: 24px;
+      color: var(--ink-2);
+    }
+
+    .villa-steps strong {
+      display: block;
+      margin-bottom: 3px;
     }
 
     .project-mahal {
@@ -768,10 +733,6 @@
         grid-template-columns: 1fr;
       }
 
-      .project-randevum .project-inner {
-        grid-template-columns: 1fr;
-      }
-
       .project-copy {
         position: static;
       }
@@ -787,7 +748,8 @@
         scroll-snap-type: x mandatory;
       }
 
-      .hero-wall .phone-frame {
+      .hero-wall .phone-frame,
+      .hero-wall .hero-project-card {
         flex: 0 0 210px;
         scroll-snap-align: center;
       }
@@ -834,8 +796,7 @@
       .overview,
       .detail-grid,
       .video-meta,
-      .randevum-brand-panel,
-      .randevum-release-list {
+      .villa-summary .stats {
         grid-template-columns: 1fr;
       }
 
@@ -848,18 +809,10 @@
       }
 
       .hero-wall .phone-frame,
+      .hero-wall .hero-project-card,
       .shot {
         width: 174px;
         flex-basis: 174px;
-      }
-
-      .market-strip .shot {
-        width: 160px;
-        flex-basis: 160px;
-      }
-
-      .randevum-icon-card {
-        grid-template-columns: 1fr;
       }
 
       .flow-heading {
@@ -893,7 +846,7 @@
     </a>
     <nav class="nav-links" aria-label="Sayfa bolumleri">
       <a href="#projeler">Projeler</a>
-      <a href="#randevum">Randevu Saati</a>
+      <a href="#dal-villalari">Dal Villaları</a>
       <a href="#mahal">Mahal</a>
       <a href="#secure">Secure</a>
       <a href="#tap4pay">Tap4Pay</a>
@@ -903,8 +856,8 @@
   <main id="top">
     <section class="hero" aria-labelledby="hero-title">
       <div>
-        <h1 id="hero-title">Mobil Uygulama Portfolyosu</h1>
-        <p class="lead">Randevu alma, proje takip, mobil guvenlik tarama ve odeme akislari icin hazirlanmis uygulama ekranlari. Bu portfolyo CV linki olarak tek sayfada proje kapsamlarini, ekran akislari ve demo videosunu gosterir.</p>
+        <h1 id="hero-title">Yazılım Projeleri</h1>
+        <p class="lead">Rezervasyon ve operasyon otomasyonu, mobil uygulamalar ve güvenli ödeme sistemleri. İş süreçlerini yazılıma dönüştürdüğüm projelerden seçili çalışmalar, ekran akışları ve demo videosu.</p>
         <div class="actions">
           <a class="button" href="#projeler">Projeleri Incele</a>
           <a class="button secondary" href="#tap4pay">Video Demoya Git</a>
@@ -912,27 +865,32 @@
         <div class="stats" aria-label="Portfolyo ozeti">
           <div class="stat">
             <strong>4</strong>
-            <span>uygulama projesi</span>
+            <span>yazılım projesi</span>
           </div>
           <div class="stat">
-            <strong>40+</strong>
-            <span>ekran ve poster</span>
+            <strong>1</strong>
+            <span>web otomasyon platformu</span>
           </div>
           <div class="stat">
             <strong>1</strong>
             <span>video demo</span>
           </div>
           <div class="stat">
-            <strong>2025-2026</strong>
-            <span>mobil urun arsivi</span>
+            <strong>3</strong>
+            <span>mobil uygulama projesi</span>
           </div>
         </div>
       </div>
 
       <div class="hero-wall" aria-label="One cikan ekranlar">
-        <figure class="phone-frame native">
-          <img src="./portfolio assets/1 Randevum/iphone-mockups/home.png" alt="Randevu Saati ana sayfa iPhone mockup">
-        </figure>
+        <a class="hero-project-card" href="#dal-villalari">
+          <small>WEB &amp; OTOMASYON</small>
+          <div>
+            <strong>Dal Villaları</strong>
+            <span>Rezervasyon, ödeme ve WhatsApp operasyonları.</span>
+          </div>
+          <span>Projeyi incele &#8599;</span>
+        </a>
         <figure class="phone-frame">
           <img src="./portfolio assets/mahal/user/IMG_0487.PNG" alt="Mahal ana sayfa ekrani">
         </figure>
@@ -944,14 +902,14 @@
 
     <section class="section-head" id="projeler">
       <h2>Proje Ozeti</h2>
-      <p>Her proje, tek bir ekran vitrininden daha fazlasini gosterecek sekilde akislara ayrildi. Boylece CV linkini acan kisi uygulamanin hangi problem icin tasarlandigini ve hangi ekranlardan olustugunu hizli okuyabilir.</p>
+      <p>Her projede çözülen problem, geliştirdiğim süreçler ve kullanılan teknolojiler bir arada. Web otomasyonundan mobil güvenlik ve ödeme sistemlerine uzanan seçili çalışmalar.</p>
     </section>
 
     <section class="overview" aria-label="Proje kartlari">
-      <a class="overview-card" style="--accent: var(--pink)" href="#randevum">
+      <a class="overview-card" style="--accent: var(--teal)" href="#dal-villalari">
         <div>
-          <strong>Randevu Saati</strong>
-          <p>Kuafor ve berber randevusu icin app icon, market posterleri, iOS vitrin ekranlari ve rezervasyon akisi.</p>
+          <strong>Dal Villaları</strong>
+          <p>Müşteri sitesi, acenta paneli, WhatsApp takvim otomasyonu ve güvenli ödeme süreçlerini birleştiren web platformu.</p>
         </div>
       </a>
       <a class="overview-card" style="--accent: var(--gold)" href="#mahal">
@@ -974,85 +932,67 @@
       </a>
     </section>
 
-    <article class="project project-randevum" id="randevum">
+    <article class="project project-villa" id="dal-villalari">
       <div class="project-inner">
         <div class="project-copy">
-          <span class="kicker">Randevu ve market vitrini</span>
-          <h3>Randevu Saati</h3>
-          <p>Randevu Saati, kuafor ve berber randevusu almayi hizlandiran mobil urun calismasi. Yeni vitrin seti app icon, feature graphic ve iOS market posterleriyle uygulamanin yayin hazirligini daha net gosterir.</p>
+          <span class="kicker">Rezervasyon ve operasyon otomasyonu</span>
+          <h3>Dal Villaları</h3>
+          <p>Misafire açık rezervasyon sitesi ile acenta yönetim panelini aynı platformda birleştiren, çok kiracılı bir web uygulaması geliştirdim. Sezonluk fiyatlandırma, rezervasyon talepleri, iyzico 3D Secure ödemeleri ve rezervasyon kesinleştirme süreçlerini birbirine bağladım.</p>
+          <div class="actions">
+            <a class="button" href="https://www.dalvillalari.com/kiralik-villalar" target="_blank" rel="noopener noreferrer">Müşteri sitesini incele &#8599;</a>
+          </div>
           <div class="detail-grid">
             <div class="detail">
               <small>Problem</small>
-              <strong>Musterinin uygun salon, personel, hizmet ve saat secimini tek akis icinde hizli tamamlamasi.</strong>
+              <strong>Farklı personel ve WhatsApp gruplarından gelen fiyat, müsaitlik ve rezervasyon işlemlerini tutarlı yönetmek.</strong>
             </div>
             <div class="detail">
-              <small>Cozum</small>
-              <strong>Konum/arama, servis, personel, takvim, onay ve randevu gecmisi ekranlariyla yonlendirilmis rezervasyon deneyimi.</strong>
+              <small>Çözüm</small>
+              <strong>Ortak rezervasyon takvimi, otomatik mesaj işleme ve sunucu tarafında doğrulanan ödeme akışları.</strong>
             </div>
             <div class="detail">
-              <small>Rolum</small>
-              <strong>Flutter arayuzleri, Firebase veri akisi, app icon, market posterleri ve yayin hazirligi.</strong>
+              <small>Rolüm</small>
+              <strong>Müşteri sitesi, yönetim paneli, API, iş otomasyonları ve eski sistemden veri aktarımının geliştirilmesi.</strong>
             </div>
             <div class="detail">
-              <small>Kapsam</small>
-              <strong>Splash, login, OTP, salon arama, ana sayfa, takvim, onay, profil ve iOS poster seti.</strong>
+              <small>Veri tutarlılığı</small>
+              <strong>PostgreSQL kısıtları ve atomik opsiyon işlemleriyle eşzamanlı rezervasyon çakışmalarının önlenmesi.</strong>
             </div>
           </div>
-          <div class="chips">
-            <span class="chip">Flutter</span>
-            <span class="chip">Firebase</span>
-            <span class="chip">iOS Posters</span>
-            <span class="chip">App Store Assets</span>
-            <span class="chip">Appointment Flow</span>
+          <div class="chips" aria-label="Kullanılan teknolojiler">
+            <span class="chip">TypeScript</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">NestJS</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Drizzle ORM</span>
+            <span class="chip">Graphile Worker</span>
+            <span class="chip">iyzico 3D Secure</span>
           </div>
         </div>
-        <div class="flow randevum-showcase">
-          <section class="flow-block">
-            <div class="flow-heading">
-              <h4>Market posteri ve marka gorunumu</h4>
-              <p>Feature graphic, app icon ve yayin vitrininde kullanilacak ana gorsel dil.</p>
+        <div class="flow">
+          <section class="villa-summary" aria-labelledby="villa-scope-title">
+            <span class="kicker">Web tabanlı operasyon platformu</span>
+            <h4 id="villa-scope-title">Müşteri deneyiminden acenta operasyonuna.</h4>
+            <p>Villa keşfi, dönemsel fiyatlar, rezervasyon talepleri ve ödeme adımları; personelin günlük yönetim süreçleriyle aynı sistemde buluşuyor.</p>
+            <div class="stats" aria-label="Eski sistem veri aktarımının kapsamı">
+              <div class="stat">
+                <strong>1.655</strong>
+                <span>aktarılan geçmiş rezervasyon</span>
+              </div>
+              <div class="stat">
+                <strong>931</strong>
+                <span>villa için eski sistem verisi güncellemesi</span>
+              </div>
             </div>
-            <figure class="randevum-feature-card">
-              <img src="./portfolio assets/1 Randevum/feature/ozellik-grafigi.png" alt="Randevu Saati feature graphic">
-            </figure>
+            <p>Veri aktarımında kaynak kayıtlar, takvimler ve finansal alanlar doğrulandı; mevcut kayıtlarla eşleştirme ve tekrar çalıştırma kontrolleri uygulandı.</p>
           </section>
-          <section class="randevum-brand-panel" aria-label="Randevu Saati marka assetleri">
-            <div class="randevum-icon-card">
-              <img src="./portfolio assets/1 Randevum/appicon/appIcon.png" alt="Randevu Saati app icon">
-              <div class="randevum-icon-copy">
-                <small>App icon</small>
-                <strong>Randevu Saati</strong>
-                <p>Kuafor, berber ve randevu temalarini tek ikon dilinde birlestiren yeni uygulama kimligi.</p>
-              </div>
-            </div>
-            <div class="randevum-release-list" aria-label="Vitrin ozeti">
-              <div>
-                <strong>12</strong>
-                <span>iOS market posteri</span>
-              </div>
-              <div>
-                <strong>1</strong>
-                <span>app icon</span>
-              </div>
-              <div>
-                <strong>1</strong>
-                <span>feature graphic</span>
-              </div>
-            </div>
-          </section>
-          <section class="flow-block">
-            <div class="flow-heading">
-              <h4>Giris ve salon arama</h4>
-              <p>Splash, telefon girisi, OTP, profil ve salon arama ekranlari.</p>
-            </div>
-            <div class="shot-strip market-strip" data-gallery="randevum-auth"></div>
-          </section>
-          <section class="flow-block">
-            <div class="flow-heading">
-              <h4>Randevu akisi ve profil</h4>
-              <p>Ana sayfa, personel, hizmet, takvim, onay, gecmis randevular ve profil ekranlari.</p>
-            </div>
-            <div class="shot-strip market-strip" data-gallery="randevum-user"></div>
+          <section class="villa-summary" aria-labelledby="villa-automation-title">
+            <h4 id="villa-automation-title">Birbirine bağlı iş akışları</h4>
+            <ol class="villa-steps">
+              <li><strong>Rezervasyon ve müsaitlik</strong>Personel işlemleri ile otomatik güncellemeler aynı takvim kurallarını kullanır. Süreli opsiyonlar ve veritabanı kısıtları çakışan rezervasyonları engeller.</li>
+              <li><strong>WhatsApp otomasyonu</strong>Türkçe grup mesajlarından müsaitlik güncellemeleri işlenir. Belirsiz talepler personel incelemesine yönlendirilir.</li>
+              <li><strong>Güvenli ödeme</strong>iyzico 3D Secure sonuçları sunucuda doğrulanır; başarılı ödeme, rezervasyon ve takvim kesinleştirmesine bağlanır.</li>
+            </ol>
           </section>
         </div>
       </div>
@@ -1235,32 +1175,6 @@
 
   <script>
     const galleries = {
-      "randevum-auth": {
-        project: "Randevu Saati",
-        text: "Splash, telefon girisi, OTP, profil ve salon arama ekranlari.",
-        nativeFrame: false,
-        items: [
-          { src: "./portfolio assets/1 Randevum/ios-posters/login-shop-search/splash.png", title: "Splash" },
-          { src: "./portfolio assets/1 Randevum/ios-posters/login-shop-search/login.png", title: "Telefon girisi" },
-          { src: "./portfolio assets/1 Randevum/ios-posters/login-shop-search/otp.png", title: "OTP dogrulama" },
-          { src: "./portfolio assets/1 Randevum/ios-posters/login-shop-search/profile.png", title: "Profil" },
-          { src: "./portfolio assets/1 Randevum/ios-posters/login-shop-search/shop-search.png", title: "Salon arama" }
-        ]
-      },
-      "randevum-user": {
-        project: "Randevu Saati",
-        text: "Musterinin ana sayfadan randevu onayina ve profil takibine ilerledigi akis.",
-        nativeFrame: false,
-        items: [
-          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/home.png", title: "Ana sayfa" },
-          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/staff.png", title: "Personel" },
-          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/services.png", title: "Hizmetler" },
-          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/calendar.png", title: "Takvim" },
-          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/approved.png", title: "Onay" },
-          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/past.png", title: "Gecmis randevular" },
-          { src: "./portfolio assets/1 Randevum/ios-posters/user-home/profile.png", title: "Profil" }
-        ]
-      },
       "mahal-login": {
         project: "Mahal",
         text: "Mahal uygulamasinin giris ve kullanici baslangic ekranlari.",
